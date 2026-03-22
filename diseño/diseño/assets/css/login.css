@@ -1,0 +1,197 @@
+
+/* Estilos Globales */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #000000 ; /* Negro absoluto de fondo */
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* Contenedor Principal: Fusión de Fondo */
+.main-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: url('../img/image\ \(1\).png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+/* Capa de degradado para legibilidad del formulario */
+.main-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Degradado de negro a transparente para no tapar el logo a la izquierda */
+    background: linear-gradient(to left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    z-index: 1;
+}
+
+/* Overlay de información lateral */
+.info-sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px;
+    z-index: 2;
+}
+
+.contact-info {
+    display: flex;
+    gap: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Lado del Formulario */
+.login-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; 
+    padding-right: 8%;
+    z-index: 2;
+}
+
+.login-header {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.login-header span {
+    color: #E31D2B; /* Rojo del logo para resaltar */
+    display: block;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    margin-top: 5px;
+}
+
+/* Estilo de Inputs tipo "Píldora" */
+.form-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: #cccccc;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.input-pill {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    padding: 14px 25px;
+    font-size: 1rem;
+    color: #1a1a1a;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.input-pill:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: #E31D2B; /* Borde rojo al enfocar */
+    box-shadow: 0 0 15px rgba(227, 29, 43, 0.4);
+}
+
+.forgot-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.forgot-link:hover {
+    color: #E31D2B;
+}
+
+/* Botones con paleta Zeus (Rojo y Plateado) */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+    justify-content: flex-end;
+}
+
+.btn-pill {
+    padding: 14px 45px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: #E31D2B; /* Rojo Zeus */
+    color: white;
+    box-shadow: 0 5px 15px rgba(227, 29, 43, 0.4);
+}
+
+.btn-secondary {
+    background: #e0e0e0; /* Plateado claro */
+    color: #000000;
+}
+
+.btn-pill:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Ajustes Móviles */
+@media (max-width: 900px) {
+    .main-wrapper::after {
+        background: rgba(0,0,0,0.7);
+    }
+    .login-section { 
+        align-items: center; 
+        padding-right: 0; 
+        padding: 20px; 
+    }
+    .login-header h1 { font-size: 2.8rem; text-align: center; }
+    .login-header { text-align: center; }
+}
